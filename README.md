@@ -10,7 +10,9 @@ Aplikasi pengenkripsi dan pendekripsi berkas pada diska lepas USB berbasis RC4
 - Kunci enkripsi dan dekripsi dimasukkan oleh pengguna. Panjang kunci bebas.
 
 ## Langkah penggunaan program
-- Unduh *executable* program sesuai platform di sini
+- Unduh zip *executable* terbaru di [sini](https://github.com/AufarR/secure-drive/releases/latest)
+- Ekstrak zip di folder yang diinginkan. Disarankan mengekstrak isi zip langsung ke folder dasar suatu *drive*
+- Buka program dengan membuka berkas Secure Drive.exe (Windows) atau Secure Drive.app (MacOS) yang telah diekstrak
 - Tekan tombol "Select file" untuk memilih berkas yang hendak dienkripsi atau didekripsi
 - Masukkan kunci enkripsi/dekripsi yang sesuai atau diinginkan
 - Tekan tombol untuk melakukan enkripsi/dekripsi teks/berkas
