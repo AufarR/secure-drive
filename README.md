@@ -1,8 +1,9 @@
 # Tugas Makalah II4031 2023/2: Implementasi RC4 dalam Aplikasi Enkripsi Berkas pada Diska Lepas USB
 
-Aplikasi pengenkripsi dan pendekripsi berkas pada diska lepas USB
+Aplikasi pengenkripsi dan pendekripsi berkas pada diska lepas USB berbasis RC4
 
 #### Spesifikasi
+- Program bersifat portabel sehingga dapat disimpan dalam penyimpanan portabel seperti diska lepas USB
 - Program dapat menerima masukan berupa berkas sembarang
 - Program dapat mengenkripsi atau mendekripsi berkas masukan 
 - Program dapat menyimpan berkas yang telah dienkripsi atau didekripsi pada folder lokasi aplikasi
@@ -16,7 +17,7 @@ Aplikasi pengenkripsi dan pendekripsi berkas pada diska lepas USB
 - Hasil enkripsi/dekripsi akan disimpan pada folder lokasi aplikasi
 
 ## Catatan
-- 
+- Berkas yang terenkripsi diasumsikan berupa berkas dengan ekstensi `.enc`
 
 ## Pembuat program
 - Aufar Ramadhan 18221163
