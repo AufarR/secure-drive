@@ -6,19 +6,18 @@ async def main(page: ft.Page):
 
     # Handlers
 
-    async def handleCipher(e:ft.ControlEvent):
+    async def handleCipher(e:ft.FilePickerResultEvent):
         try:
             with open(fileInfo.data["path"], "rb") as f:
                 text = f.read()
             key = bytes(keyInput.value,'utf-8')
             res = rc4(text,key)
-            fname = getcwd() + "/" + (fileInfo.value[:-4] if fileInfo.data["encrypted"] else (fileInfo.value + ".enc"))
-            with open(fname, "wb") as f:
+            with open(e.path, "wb") as f:
                 f.write(res)
-        except Exception as e:
-            await alert("Error: " + e.args[0])
+        except Exception as err:
+            await alert("Error: " + err.args[0])
         else:
-            await alert("File saved as " + fname)
+            await alert("File saved as " + e.path)
             fileInfo.data.clear()
             fileInfo.value = "No file selected"
             submitButton.disabled = "path" not in fileInfo.data
@@ -42,14 +41,19 @@ async def main(page: ft.Page):
     # Components
     
     filePicker = ft.FilePicker(on_result=fileSelected)
+    savePicker = ft.FilePicker(on_result=handleCipher)
     page.overlay.append(filePicker)
+    page.overlay.append(savePicker)
 
     keyInput = ft.TextField(label="Key", password=True, can_reveal_password=True)
 
     filePick = ft.FilledButton("Select a file", on_click= lambda _: filePicker.pick_files(dialog_title="Select file to encrypt/decrypt"))
     fileInfo = ft.Text("No file selected", data={})
 
-    submitButton = ft.FilledButton(text="Encrypt/Decrypt", on_click=handleCipher, disabled=True)
+    submitButton = ft.FilledButton(text="Encrypt/Decrypt", disabled=True, on_click= lambda _: savePicker.save_file(
+        dialog_title="Select save location",
+        file_name= fileInfo.value[:-4] if fileInfo.data["encrypted"] else (fileInfo.value + ".enc")
+    ))
 
     # Main content
     content = ft.SafeArea (
