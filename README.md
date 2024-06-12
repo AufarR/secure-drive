@@ -6,7 +6,7 @@ Aplikasi pengenkripsi dan pendekripsi berkas pada diska lepas USB berbasis RC4
 - Program bersifat portabel sehingga dapat disimpan dalam penyimpanan portabel seperti diska lepas USB
 - Program dapat menerima masukan berupa berkas sembarang
 - Program dapat mengenkripsi atau mendekripsi berkas masukan 
-- Program dapat menyimpan berkas yang telah dienkripsi atau didekripsi pada folder lokasi aplikasi
+- Program dapat menyimpan berkas yang telah dienkripsi atau didekripsi pada folder pilihan pengguna
 - Kunci enkripsi dan dekripsi dimasukkan oleh pengguna. Panjang kunci bebas.
 
 ## Langkah penggunaan program
@@ -16,7 +16,7 @@ Aplikasi pengenkripsi dan pendekripsi berkas pada diska lepas USB berbasis RC4
 - Tekan tombol "Select file" untuk memilih berkas yang hendak dienkripsi atau didekripsi
 - Masukkan kunci enkripsi/dekripsi yang sesuai atau diinginkan
 - Tekan tombol untuk melakukan enkripsi/dekripsi teks/berkas
-- Hasil enkripsi/dekripsi akan disimpan pada folder lokasi aplikasi
+- Hasil enkripsi/dekripsi akan disimpan pada folder terpilih
 
 ## Catatan
 - Berkas yang terenkripsi diasumsikan berupa berkas dengan ekstensi `.enc`

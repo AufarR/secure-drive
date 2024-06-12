@@ -1,6 +1,5 @@
 import flet as ft
 from rc4 import rc4
-from os import getcwd
 
 async def main(page: ft.Page):
 
@@ -42,8 +41,6 @@ async def main(page: ft.Page):
     
     filePicker = ft.FilePicker(on_result=fileSelected)
     savePicker = ft.FilePicker(on_result=handleCipher)
-    page.overlay.append(filePicker)
-    page.overlay.append(savePicker)
 
     keyInput = ft.TextField(label="Key", password=True, can_reveal_password=True)
 
@@ -77,6 +74,10 @@ async def main(page: ft.Page):
         )
     )
 
+    # Page config
+
+    page.overlay.append(filePicker)
+    page.overlay.append(savePicker)
     page.add(content)
     page.scroll = ft.ScrollMode.AUTO
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
