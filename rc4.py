@@ -1,4 +1,4 @@
-# RC4 cipher
+# RC4 cipher with initial 768-byte of keystreams dropped
 # 
 # Inputs:
 # - Plaintext/ciphertext as byte array
@@ -21,13 +21,18 @@ def rc4(text, key):
     # PRGA
     i = 0
     j = 0
+    for k in range(768): # Drop initial 768 keystream
+        i = (i+1) % 256
+        j = (j + S[i]) % 256
+        S[i], S[j] = S[j], S[i]
+        t = (S[i] + S[j]) % 256
     for k in range(len(text)):
         i = (i+1) % 256
         j = (j + S[i]) % 256
         S[i], S[j] = S[j], S[i]
         t = (S[i] + S[j]) % 256
-        u = S[t]
-        cipher[k] = cipher[k]
+        K = S[t]
+        cipher[k] = cipher[k] ^ K # Output
 
     return cipher
 
