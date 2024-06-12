@@ -1,4 +1,4 @@
-# RC4 cipher with vigenere-algorithm-enhanced PRGA
+# RC4 cipher
 # 
 # Inputs:
 # - Plaintext/ciphertext as byte array
